@@ -1,6 +1,30 @@
 """Registration code of Gym environments in this package."""
-import gym
+import gymnasium as gym
 
+def register_custom_mario_env(id, entry_point, max_episode_steps=9999999, reward_threshold=9999999, nondeterministic=True, **kwargs):
+    """
+    Register a custom Super Mario Bros. environment with OpenAI Gym.
+
+    Args:
+        id (str): id for the env to register
+        entry_point (str): Python entry point of the environment class
+        max_episode_steps (int): Maximum number of steps per episode
+        reward_threshold (int): Reward threshold to consider the task solved
+        nondeterministic (bool): Whether the environment is non-deterministic
+        kwargs (dict): Additional keyword arguments for the environment initializer
+
+    Returns:
+        None
+
+    """
+    gym.envs.registration.register(
+        id=id,
+        entry_point=entry_point,
+        max_episode_steps=max_episode_steps,
+        reward_threshold=reward_threshold,
+        kwargs=kwargs,
+        nondeterministic=nondeterministic,
+    )
 
 def _register_mario_env(id, is_random=False, **kwargs):
     """
