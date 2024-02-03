@@ -665,6 +665,23 @@ files = [
 ]
 
 [[package]]
+name = "gym-super-mario-bros"
+version = "7.5.0"
+description = "Super Mario Bros. for Farama Gymnasium"
+optional = false
+python-versions = "*"
+files = [
+    {file = "gym_super_mario_bros-7.5.0-py3-none-any.whl", hash = "sha256:bcf6aa0d66867faa3f1eca317f0ed67a364f18ec80f67b46c4a84b77faf3b307"},
+]
+
+[package.dependencies]
+nes-py = ">=8.1.4"
+
+[package.source]
+type = "file"
+url = "dist/gym_super_mario_bros-7.5.0-py3-none-any.whl"
+
+[[package]]
 name = "gymnasium"
 version = "0.29.1"
 description = "A standard API for reinforcement learning and a diverse set of reference environments (formerly Gym)."
@@ -1996,4 +2013,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "509fe80de23786351378f7191dc60d909e739b42212dda018e42e5436d0c255d"
+content-hash = "da60da569545931c3bcb6d0d4d01bbe6c575145f07ee2e943dffad0a8a218f1d"
