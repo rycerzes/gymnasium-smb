@@ -1,12 +1,21 @@
 """Super Mario Bros for OpenAI Gym."""
 import argparse
 import sys
-import gym
+import gymnasium as gym
 from nes_py.wrappers import JoypadSpace
 from nes_py.app.play_human import play_human
 from nes_py.app.play_random import play_random
 from ..actions import RIGHT_ONLY, SIMPLE_MOVEMENT, COMPLEX_MOVEMENT
+import pdb
+import pkg_resources
 
+def get_version(gym):
+    try:
+        return pkg_resources.get_distribution(gym).version
+    except pkg_resources.DistributionNotFound:
+        return "Package not found"
+
+print(get_version("gymnasium"))
 
 # a key mapping of action spaces to wrap with
 _ACTION_SPACES = {
@@ -46,6 +55,14 @@ def _get_args():
         nargs='+',
         help='The random stages to sample from for a random stage env'
     )
+    parser.add_argument('--debug', '-d',
+        action='store_true',
+        help='Enable debug mode'
+    )
+    parser.add_argument('--config', '-c',
+        type=str,
+        help='Path to configuration file'
+    )
     # parse arguments and return them
     return parser.parse_args()
 
@@ -71,7 +88,9 @@ def main():
         play_human(env)
     else:
         play_random(env, args.steps)
-
+    
+    if args.debug:
+        pdb.set_trace()\
 
 # explicitly define the outward facing API of this module
 __all__ = [main.__name__]
