@@ -77,6 +77,7 @@ typing-extensions = "4.9.0"
 urllib3 = "2.2.0"
 virtualenv = "20.25.0"
 zipp = "3.17.0"
+gym-super-mario-bros = {path = "dist/gym_super_mario_bros-7.5.0-py3-none-any.whl"}
 
 
 [build-system]

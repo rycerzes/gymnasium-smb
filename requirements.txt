@@ -18,6 +18,7 @@ filelock==3.13.1
 fonttools==4.47.2
 gym==0.26.2
 gym-notices==0.0.8
+gym-super-mario-bros @ file:///D:/Github/Mario-RL/gymnasium-smb/dist/gym_super_mario_bros-7.5.0-py3-none-any.whl
 gymnasium==0.29.1
 idna==3.6
 importlib-metadata==7.0.1
@@ -40,6 +41,7 @@ pillow==10.2.0
 pkginfo==1.9.6
 platformdirs==3.11.0
 poetry==1.7.1
+poetry-add-requirements.txt==1.4.0
 poetry-core==1.8.1
 poetry-plugin-export==1.6.0
 ptyprocess==0.7.0
