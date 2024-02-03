@@ -1,5 +1,5 @@
 """An OpenAI Gym Super Mario Bros. environment that randomly selects levels."""
-import gym
+import gymnasium as gym
 import numpy as np
 from .smb_env import SuperMarioBrosEnv
 
@@ -26,11 +26,18 @@ class SuperMarioBrosRandomStagesEnv(gym.Env):
         Args:
             rom_mode (str): the ROM mode to use when loading ROMs from disk
             stages (list): select stages at random from a specific subset
+        """
+        self.played_stages = []
+        # rest of the code
+
+    def get_played_stages(self):
+        """
+        Get the list of stages that have been played.
 
         Returns:
-            None
-
+            list: The list of played stages.
         """
+        return self.played_stages
         # create a dedicated random number generator for the environment
         self.np_random = np.random.RandomState()
         # setup the environments
